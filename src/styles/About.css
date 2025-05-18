@@ -1,0 +1,100 @@
+.about-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background: linear-gradient(to bottom, #0d0d0d, #1a0000);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.bloody-title {
+  font-size: 3.2rem;
+  font-family: 'Georgia', serif;
+  color: crimson;
+  text-shadow:
+    2px 2px 0 #000,
+    0 0 5px crimson,
+    0 0 10px darkred;
+  letter-spacing: 0.1em;
+  margin-bottom: 2rem;
+  animation: bleedIn 2s ease forwards;
+}
+
+/* Animacija za naslov */
+@keyframes bleedIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about-content {
+  max-width: 800px;
+  font-size: 1.1rem;
+  color: #cccccc;
+  line-height: 1.8;
+  text-shadow: 0 0 4px black;
+}
+
+/* Animacije za svaki paragraf sa različitim zakašnjenjem */
+.about-content p {
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation-fill-mode: forwards;
+  animation-name: fadeInUp;
+  animation-duration: 1.2s;
+  animation-timing-function: ease;
+}
+
+.fade-in-delay-1 {
+  animation-delay: 0.5s;
+}
+
+.fade-in-delay-2 {
+  animation-delay: 1.2s;
+}
+
+.fade-in-delay-3 {
+  animation-delay: 2s;
+}
+
+/* Animacija pojavljivanja teksta sa laganim pomeranjem gore-dole */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile optimizacija */
+@media (max-width: 600px) {
+  .about-section {
+    padding: 1rem 1rem;
+    min-height: auto;
+  }
+
+  .bloody-title {
+    font-size: 2rem;
+    letter-spacing: 0.07em;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-content {
+    max-width: 100%;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}

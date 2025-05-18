@@ -1,0 +1,103 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: #0b0b0b;
+  border-bottom: 2px solid crimson;
+  padding: 1.2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-family: 'Georgia', serif;
+  color: crimson;
+  text-shadow: 0 0 5px #ff0000;
+  letter-spacing: 0.15em;
+  user-select: none;
+}
+
+.nav-links a {
+  margin-left: 1.5rem;
+  color: #ddd;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -2px;
+  background: crimson;
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: crimson;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Hamburger dugme - sakriveno na desktopu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.hamburger .bar {
+  height: 3px;
+  width: 100%;
+  background-color: crimson;
+  border-radius: 2px;
+}
+
+/* Mobilni prikaz */
+@media (max-width: 768px) {
+  /* Prikazujemo hamburger dugme */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Sakrivamo linkove po defaultu */
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 60px; /* malo ispod headera */
+    right: 0;
+    background-color: #0b0b0b;
+    flex-direction: column;
+    width: 200px;
+    padding: 1rem;
+    border-left: 2px solid crimson;
+    border-bottom: 2px solid crimson;
+  }
+
+  /* Kada je meni otvoren */
+  .nav-links.open {
+    display: flex;
+  }
+
+  /* Linkovi u meniju jedan ispod drugog */
+  .nav-links a {
+    margin: 0.5rem 0;
+    margin-left: 0; /* uklanja marginu sa leve strane */
+  }
+}

@@ -1,0 +1,74 @@
+.rituals-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background: linear-gradient(to bottom, #0d0d0d, #1a0000);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+   padding-bottom: 5rem; 
+}
+
+.bloody-title {
+  font-size: 3.2rem;
+  font-family: 'Georgia', serif;
+  color: crimson;
+  text-shadow:
+    2px 2px 0 #000,
+    0 0 5px crimson,
+    0 0 10px darkred;
+  letter-spacing: 0.1em;
+  margin-bottom: 2rem;
+  animation: bleedIn 2s ease forwards;
+}
+
+@keyframes bleedIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rituals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1100px;
+  animation: fadeIn 3s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* === MOBILE OPTIMIZATION === */
+@media (max-width: 600px) {
+  .rituals-section {
+    padding: 1rem 1rem;
+    padding-bottom: 4rem; /* više prostora dole */
+    min-height: auto;
+  }
+  .bloody-title {
+    font-size: 2rem;
+    letter-spacing: 0.07em;
+    margin-bottom: 1.5rem;
+  }
+
+  .rituals-grid {
+    grid-template-columns: 1fr; /* jedna kolona na malim ekranima */
+    gap: 1.5rem;
+    max-width: 100%;
+  }
+}

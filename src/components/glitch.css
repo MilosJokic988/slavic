@@ -1,0 +1,78 @@
+.glitch-text {
+  position: relative;
+  color: crimson;
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.1em;
+  user-select: none;
+  animation: glitch-flicker 2s infinite;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+  color: crimson;
+  clip: rect(0, 0, 0, 0);
+}
+
+.glitch-text::before {
+  animation: glitch-top 1s infinite linear alternate-reverse;
+  color: #00ffff;
+}
+
+.glitch-text::after {
+  animation: glitch-bottom 1s infinite linear alternate-reverse;
+  color: #ff00ff;
+}
+
+@keyframes glitch-top {
+  0% {
+    clip: rect(0, 9999px, 0, 0);
+    transform: translate(-3px, -3px);
+  }
+  50% {
+    clip: rect(5px, 9999px, 30px, 0);
+    transform: translate(2px, -1px);
+  }
+  100% {
+    clip: rect(10px, 9999px, 40px, 0);
+    transform: translate(-1px, 1px);
+  }
+}
+
+@keyframes glitch-bottom {
+  0% {
+    clip: rect(60px, 9999px, 80px, 0);
+    transform: translate(3px, 2px);
+  }
+  50% {
+    clip: rect(65px, 9999px, 85px, 0);
+    transform: translate(-2px, -1px);
+  }
+  100% {
+    clip: rect(70px, 9999px, 90px, 0);
+    transform: translate(1px, -2px);
+  }
+}
+
+@keyframes glitch-flicker {
+  0%, 100% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  55% {
+    opacity: 0.9;
+  }
+}

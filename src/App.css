@@ -1,0 +1,34 @@
+/* Reset i osnovna podešavanja */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root, .layout {
+  height: 100%;
+  width: 100%;
+  background-color: #0d0d0d;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* cela visina ekrana */
+  width: 100vw;
+}
+
+.content {
+  flex: 1; /* zauzima sav preostali prostor između headera i footera */
+  padding-top: 100px;    /* ako header ima fiksnu visinu */
+  padding-bottom: 100px; /* ako footer ima fiksnu visinu */
+  overflow-y: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}

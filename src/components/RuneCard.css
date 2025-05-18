@@ -1,0 +1,21 @@
+.rune-card {
+  background: #121212;
+  border: 1px solid crimson;
+  border-radius: 10px;
+  padding: 1.5rem;
+  color: #eee;
+  text-align: center;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 12px #000;
+}
+
+.rune-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 18px crimson;
+}
+
+.rune-symbol {
+  font-size: 2rem;
+  color: crimson;
+  margin-bottom: 1rem;
+}

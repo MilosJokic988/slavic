@@ -1,0 +1,20 @@
+.god-card {
+  background: #1a1a1a;
+  border: 1px solid crimson;
+  border-radius: 12px;
+  padding: 2rem;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 0 10px #000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.god-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px crimson;
+}
+
+.god-symbol {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}

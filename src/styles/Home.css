@@ -1,0 +1,108 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Hero sekcija */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background-image: url('/cernobog.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Naslov */
+.bloody-title {
+  font-size: 3.5rem;
+  font-family: 'Georgia', serif;
+  color: crimson;
+  text-shadow:
+    0 0 5px darkred,
+    0 0 10px crimson,
+    2px 2px 0 black;
+  letter-spacing: 0.12em;
+  margin-bottom: 1rem;
+  animation: drip 2s ease-in-out forwards;
+}
+
+@keyframes drip {
+  0% {
+    text-shadow: 0 0 5px darkred;
+  }
+  100% {
+    text-shadow:
+      2px 2px 0 black,
+      0 0 10px crimson,
+      0 0 20px darkred;
+  }
+}
+
+/* Podnaslov */
+.hero-subtitle {
+  font-size: 1.4rem;
+  font-style: italic;
+  color: #bbbbbb;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 5px #000;
+  animation: fadeIn 2s ease forwards;
+  opacity: 0;
+}
+
+/* Uvodni tekst */
+.home-intro {
+  max-width: 700px;
+  font-size: 1.1rem;
+  color: #cccccc;
+  line-height: 1.7;
+  text-shadow: 0 0 4px black;
+  animation: fadeIn 3s ease forwards;
+  opacity: 0;
+}
+
+/* Logo u donjem desnom uglu */
+.home-footer-logo {
+  position: absolute;
+  bottom: 100px;
+  right: 20px;
+  animation: flicker 3s infinite alternate;
+}
+
+.home-logo {
+  width: 100px;
+  height: auto;
+  filter: drop-shadow(0 0 5px crimson);
+}
+
+/* Animacije */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0.9;
+    filter: drop-shadow(0 0 2px crimson);
+  }
+  50% {
+    opacity: 0.6;
+    filter: drop-shadow(0 0 8px darkred);
+  }
+  100% {
+    opacity: 1;
+    filter: drop-shadow(0 0 5px crimson);
+  }
+}
